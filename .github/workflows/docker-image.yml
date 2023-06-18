@@ -17,7 +17,7 @@ jobs:
 
 
     - name: display current branch
-      run : echo ${GITHUB_REF}
+      run : echo ${GITHUB_REF##*/}
    # - name: Build the Docker image 
      # run: docker build . --file Dockerfile --tag python-app:${{ github.run_number }}
 
