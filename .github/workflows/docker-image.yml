@@ -22,3 +22,9 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Tag the docker image
+      run: docker tag python-app:$(date +%s) mrmayanger/python-flask:v1.$(date +%s)
+
+    - name: Push the docker image
+      run: docker push  mrmayanger/python-flask:v1.$(date +%s)
